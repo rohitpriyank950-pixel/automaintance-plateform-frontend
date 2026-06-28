@@ -18,7 +18,7 @@ function App() {
     if (!url) return alert("URL daal bhai!");
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/analyze?url=${url}`);
+      const res = await fetch(`https://automaintance-plateform-backend.onrender.com/analyze?url=${url}`);
       const data = await res.json();
       const audits = data?.lighthouseResult?.audits || {};
       const suggestions = Object.values(audits)
